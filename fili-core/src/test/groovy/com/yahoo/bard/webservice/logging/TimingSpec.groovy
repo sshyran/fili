@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 import ch.qos.logback.classic.spi.ILoggingEvent
 import spock.lang.Ignore
+import spock.lang.Retry
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Timeout
@@ -186,6 +187,7 @@ class TimingSpec extends Specification {
         expect res[timerName], closeTo(expectedDuration, epsilon)
     }
 
+    @Retry
     def "Check start and stop of nested timers"() {
         given: "A duration to wait between starting and stopping the timer"
         int duration = 500
