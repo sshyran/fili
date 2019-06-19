@@ -22,6 +22,7 @@ public class LuthierResourceDictionaries extends ResourceDictionaries {
         super();
         metricMakerDictionary = new LinkedHashMap<>();
     }
+
     public Map<String, MetricMaker> getMetricMakerDictionary() {
         return metricMakerDictionary;
     }
